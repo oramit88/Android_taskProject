@@ -5,27 +5,67 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="il.ac.shenkar.todo_app.CreateTaskActivity">
+    tools:context="il.ac.shenkar.todo_app.View.CreateTaskActivity">
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/newTaskText"
+        android:id="@+id/taskName"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
+        android:textSize="16dp"
         android:editable="true"
-        android:text="Add New Task" />
+        android:text="Task Name: "
+        />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Create"
         android:id="@+id/createTaskButton"
-        android:layout_below="@+id/newTaskText"
-        android:layout_alignRight="@+id/newTaskText"
-        android:layout_alignEnd="@+id/newTaskText"
-        android:background="#a9faba" />
+        android:background="#a9faba"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/taskName"
+        android:layout_alignEnd="@+id/taskName"
+        />
+
+    // radio buttons container
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_above="@+id/createTaskButton"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="32dp"
+        android:background="#fbcbcb">
+    </LinearLayout>
+
+    // category headline
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Category:"
+        android:id="@+id/taskCategory"
+        android:layout_below="@+id/taskName"
+        android:textSize="16dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Spinner
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/taskSpinner"
+        android:layout_below="@+id/taskName"
+        android:layout_toRightOf="@+id/taskCategory"
+        android:layout_toEndOf="@+id/taskCategory"
+        android:layout_marginLeft="29dp"
+        android:layout_marginStart="29dp">
+
+    </Spinner>
+
+
 </RelativeLayout>
